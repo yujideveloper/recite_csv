@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yuji Hanamura"]
   spec.email         = ["yuji.developer@gmail.com"]
 
-  spec.summary       = %q{ReciteCSV hels to build a class for CSV reader.}
-  spec.description   = %q{ReciteCSV hels to build a class for CSV reader.}
+  spec.summary       = %q{ReciteCSV helps to build a class for CSV reader.}
+  spec.description   = %q{ReciteCSV helps to build a class for CSV reader.}
   spec.homepage      = "https://github.com/yujideveloper/recite_csv"
   spec.license       = "MIT"
 

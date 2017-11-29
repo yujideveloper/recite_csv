@@ -1,6 +1,6 @@
 # ReciteCSV
 
-ReciteCSV hels to build a class for CSV reader.
+ReciteCSV helps to build a class for CSV reader.
 
 ## Installation
 
