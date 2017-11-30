@@ -2,6 +2,7 @@
 
 ReciteCSV helps to build a class for CSV reader.
 
+[![Gem Version](https://badge.fury.io/rb/recite_csv.svg)](https://badge.fury.io/rb/recite_csv)
 [![Build Status](https://travis-ci.org/yujideveloper/recite_csv.svg?branch=master)](https://travis-ci.org/yujideveloper/recite_csv)
 
 ## Installation
