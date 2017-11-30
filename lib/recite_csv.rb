@@ -1,5 +1,3 @@
+require "recite_csv/module"
 require "recite_csv/version"
-
-module ReciteCSV
-  # Your code goes here...
-end
+require "recite_csv/reader"
