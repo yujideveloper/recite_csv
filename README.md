@@ -86,7 +86,7 @@ Define custom methods of row object using `row_methods`.
 
 ``` ruby
 class Quz
-  include ReciteCSV::Reader::Builder.new(%w[col1 col2])
+  include ReciteCSV::Reader::Builder.new(col1: "COL1", col2: "COL2")
 
   row_methods do
     def col1
