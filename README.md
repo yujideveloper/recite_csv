@@ -20,7 +20,92 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The following is a sample csv file.
+
+``` csv
+COL1,COL2
+VALUE1,VALUE2
+VALUE3,VALUE4
+```
+
+Specify header definition using hash object.
+
+``` ruby
+class Foo
+  include ReciteCSV::Reader::Builder.new(col1: "COL1", col2: "COL2")
+end
+
+Foo.new("./sample.csv").each do |row|
+  row.class # => Foo::Row
+  row.col1
+  row.col2
+end
+```
+
+Specify header definition using array object.
+
+``` ruby
+class Bar
+  include ReciteCSV::Reader::Builder.new(%w[col1 col2])
+end
+
+Bar.new("./sample.csv").each do |row|
+  row.class # => Bar::Row
+  row.col1
+  row.col2
+end
+```
+
+Define custom methods of row object.
+
+``` ruby
+class Baz
+  include(
+    ReciteCSV::Reader::Builder.new(col1: "COL1", col2: "COL2") do
+      # define methods of Row class
+      def col1
+        "override #{super}"
+      end
+
+      def custom_method
+        # do somethings..
+      end
+    end
+  )
+end
+
+Baz.new("./sample.csv").each do |row|
+  row.class # => Baz::Row
+  row.col1
+  row.col2
+  row.custom_method
+end
+```
+
+Define custom methods of row object using `row_methods`.
+
+``` ruby
+class Quz
+  include ReciteCSV::Reader::Builder.new(%w[col1 col2])
+
+  row_methods do
+    def col1
+      "override #{super}"
+    end
+
+    def custom_method
+      # do somethings..
+    end
+  end
+end
+
+Quz.new("./sample.csv").each do |row|
+  row.class # => Quz::Row
+  row.col1
+  row.col2
+  row.custom_method
+end
+```
 
 ## Development
 
