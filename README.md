@@ -2,6 +2,8 @@
 
 ReciteCSV helps to build a class for CSV reader.
 
+[![Build Status](https://travis-ci.org/yujideveloper/recite_csv.svg?branch=master)](https://travis-ci.org/yujideveloper/recite_csv)
+
 ## Installation
 
 Add this line to your application's Gemfile:
