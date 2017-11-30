@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-The following is a sample csv file.
+The following is a example csv file.
 
 ``` csv
 COL1,COL2
@@ -35,7 +35,7 @@ class Foo
   include ReciteCSV::Reader::Builder.new(col1: "COL1", col2: "COL2")
 end
 
-Foo.new("./sample.csv").each do |row|
+Foo.new("./example.csv").each do |row|
   row.class # => Foo::Row
   row.col1
   row.col2
@@ -49,7 +49,7 @@ class Bar
   include ReciteCSV::Reader::Builder.new(%w[col1 col2])
 end
 
-Bar.new("./sample.csv").each do |row|
+Bar.new("./example.csv").each do |row|
   row.class # => Bar::Row
   row.col1
   row.col2
@@ -74,7 +74,7 @@ class Baz
   )
 end
 
-Baz.new("./sample.csv").each do |row|
+Baz.new("./example.csv").each do |row|
   row.class # => Baz::Row
   row.col1
   row.col2
@@ -99,7 +99,7 @@ class Quz
   end
 end
 
-Quz.new("./sample.csv").each do |row|
+Quz.new("./example.csv").each do |row|
   row.class # => Quz::Row
   row.col1
   row.col2
