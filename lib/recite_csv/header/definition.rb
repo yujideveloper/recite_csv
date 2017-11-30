@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ReciteCSV
   module Header
     module Definition
@@ -58,7 +60,7 @@ module ReciteCSV
       DEFINITIONS = {
         ::Hash => Hash,
         ::Array => Array
-      }
+      }.freeze
 
       module_function
 

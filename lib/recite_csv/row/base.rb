@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ReciteCSV
   module Row
     class Base

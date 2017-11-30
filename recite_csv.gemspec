@@ -1,7 +1,8 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'recite_csv/version'
+require "recite_csv/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "recite_csv"
@@ -9,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yuji Hanamura"]
   spec.email         = ["yuji.developer@gmail.com"]
 
-  spec.summary       = %q{ReciteCSV helps to build a class for CSV reader.}
-  spec.description   = %q{ReciteCSV helps to build a class for CSV reader.}
+  spec.summary       = "ReciteCSV helps to build a class for CSV reader."
+  spec.description   = "ReciteCSV helps to build a class for CSV reader."
   spec.homepage      = "https://github.com/yujideveloper/recite_csv"
   spec.license       = "MIT"
 
