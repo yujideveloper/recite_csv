@@ -3,6 +3,7 @@
 ### Changes
 
 * Rename the accessor for raw data of row from `raw_data` to `_raw_data`
+* Add support Ruby 2.2
 
 ### Misc
 
