@@ -3,14 +3,14 @@
 module ReciteCSV
   module Row
     class Base
-      attr_reader :raw_data
+      attr_reader :_raw_data
 
       def initialize(raw_data)
-        @raw_data = raw_data
+        @_raw_data = raw_data
       end
 
       def [](key)
-        self.raw_data[key]
+        self._raw_data[key]
       end
     end
   end
