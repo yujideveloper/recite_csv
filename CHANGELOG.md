@@ -5,6 +5,10 @@
 * Rename the accessor for raw data of row from `raw_data` to `_raw_data`
 * Add support Ruby 2.2
 
+### Bug Fixes
+
+* Fix typo of constant for default csv options
+
 ### Misc
 
 * Support Rubocop v0.50.0 or later

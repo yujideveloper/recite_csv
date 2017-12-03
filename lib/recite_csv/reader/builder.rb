@@ -20,7 +20,7 @@ module ReciteCSV
       def included(class_or_module)
         class_or_module.include Core
         class_or_module.const_set(:Row, @row_class)
-        class_or_module.const_set(:DEFAULT_CSV_OPIONS, @definition.default_csv_options)
+        class_or_module.const_set(:DEFAULT_CSV_OPTIONS, @definition.default_csv_options)
         class_or_module.extend DSL
       end
     end

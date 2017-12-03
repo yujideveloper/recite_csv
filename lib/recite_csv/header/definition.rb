@@ -27,7 +27,7 @@ module ReciteCSV
       end
 
       class Hash < Base
-        DEFAULT_CSV_OPIONS = { headers: :first_row }.freeze
+        DEFAULT_CSV_OPTIONS = { headers: :first_row }.freeze
 
         class ColumnMethodsBuilder < ::Module
           def initialize(raw_definition)
@@ -40,7 +40,7 @@ module ReciteCSV
         end
 
         def default_csv_options
-          DEFAULT_CSV_OPIONS
+          DEFAULT_CSV_OPTIONS
         end
       end
 
