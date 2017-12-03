@@ -13,16 +13,17 @@ RSpec.describe ReciteCSV::Reader::Core do
   end
 
   describe "#each" do
+    let(:temp_csv) { Tempfile.open("csv") }
     let(:reader) do
       csv = CSV.generate do |csv|
         csv << %w[COL1 COL2]
         csv << %w[V1 V2]
       end
-      f = Tempfile.open
-      f.write(csv)
-      f.flush
-      dummy_class.new(f)
+      temp_csv.write(csv)
+      temp_csv.flush
+      dummy_class.new(temp_csv)
     end
+    after { temp_csv.close }
 
     context "call with block" do
       it "enumerate with row object" do
