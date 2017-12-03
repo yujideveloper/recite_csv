@@ -7,7 +7,7 @@
 
 ### Misc
 
-* Support rubocop version later than v0.50.0
+* Support Rubocop v0.50.0 or later
 * Introduce pry
 
 
