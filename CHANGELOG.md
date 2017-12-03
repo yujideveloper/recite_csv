@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.1.1 (2017-12-03)
+
 ### Changes
 
 * Rename the accessor for raw data of row from `raw_data` to `_raw_data`
