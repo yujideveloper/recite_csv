@@ -5,7 +5,7 @@
 * Rename the accessor for raw data of row from `raw_data` to `_raw_data`
 * Add support Ruby 2.2
 
-### Bug Fixes
+### Bug fixes
 
 * Fix typo of constant for default csv options
 
