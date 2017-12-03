@@ -68,6 +68,13 @@ RSpec.describe ReciteCSV::Reader::Builder do
       it { is_expected.to be_const_defined :Row }
       it { is_expected.to be_const_defined :DEFAULT_CSV_OPTIONS }
       it { is_expected.to respond_to :row_methods }
+
+      describe "Row" do
+        subject { reader::Row }
+
+        it { is_expected.to be_method_defined :col1 }
+        it { is_expected.to be_method_defined :col2 }
+      end
     end
 
     context "array header" do
@@ -79,6 +86,13 @@ RSpec.describe ReciteCSV::Reader::Builder do
       it { is_expected.to be_const_defined :Row }
       it { is_expected.to be_const_defined :DEFAULT_CSV_OPTIONS }
       it { is_expected.to respond_to :row_methods }
+
+      describe "Row" do
+        subject { reader::Row }
+
+        it { is_expected.to be_method_defined :col1 }
+        it { is_expected.to be_method_defined :col2 }
+      end
     end
   end
 end
