@@ -21,6 +21,20 @@ RSpec.describe ReciteCSV::Reader::Builder do
         it { is_expected.to be_method_defined :col1 }
         it { is_expected.to be_method_defined :col2 }
         it { is_expected.not_to be_method_defined :col3 }
+
+        context "with block" do
+          let(:reader_module) do
+            described_class.new(header) do
+              def custom_method; end
+            end
+          end
+
+          it { is_expected.to be < ReciteCSV::Row::Base }
+          it { is_expected.to be_method_defined :col1 }
+          it { is_expected.to be_method_defined :col2 }
+          it { is_expected.not_to be_method_defined :col3 }
+          it { is_expected.to be_method_defined :custom_method }
+        end
       end
 
       describe "@definition" do
@@ -45,6 +59,20 @@ RSpec.describe ReciteCSV::Reader::Builder do
         it { is_expected.to be_method_defined :col1 }
         it { is_expected.to be_method_defined :col2 }
         it { is_expected.to be_method_defined :col3 }
+
+        context "with block" do
+          let(:reader_module) do
+            described_class.new(header) do
+              def custom_method; end
+            end
+          end
+
+          it { is_expected.to be < ReciteCSV::Row::Base }
+          it { is_expected.to be_method_defined :col1 }
+          it { is_expected.to be_method_defined :col2 }
+          it { is_expected.to be_method_defined :col3 }
+          it { is_expected.to be_method_defined :custom_method }
+        end
       end
 
       describe "@definition" do
@@ -70,10 +98,13 @@ RSpec.describe ReciteCSV::Reader::Builder do
       it { is_expected.to respond_to :row_methods }
 
       describe "Row" do
+        let(:expected_row_class) do
+          reader_module.instance_variable_get(:@row_class)
+        end
+
         subject { reader::Row }
 
-        it { is_expected.to be_method_defined :col1 }
-        it { is_expected.to be_method_defined :col2 }
+        it { is_expected.to eq expected_row_class }
       end
     end
 
@@ -88,10 +119,13 @@ RSpec.describe ReciteCSV::Reader::Builder do
       it { is_expected.to respond_to :row_methods }
 
       describe "Row" do
+        let(:expected_row_class) do
+          reader_module.instance_variable_get(:@row_class)
+        end
+
         subject { reader::Row }
 
-        it { is_expected.to be_method_defined :col1 }
-        it { is_expected.to be_method_defined :col2 }
+        it { is_expected.to eq expected_row_class }
       end
     end
   end
