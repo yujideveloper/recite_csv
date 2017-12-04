@@ -22,4 +22,22 @@ RSpec.describe ReciteCSV::Row::Base do
 
     it { is_expected.to eq(col1: "val1", col2: "val2") }
   end
+
+  describe ".new" do
+    context "Base" do
+      let(:dummy_class) { described_class }
+
+      subject { dummy_class.new({}) }
+
+      it { expect { subject }.to raise_error(NotImplementedError) }
+    end
+
+    context "subclass of Base" do
+      let(:dummy_class) { Class.new(described_class) }
+
+      subject { dummy_class.new({}) }
+
+      it { expect { subject }.not_to raise_error }
+    end
+  end
 end

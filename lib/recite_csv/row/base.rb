@@ -12,6 +12,14 @@ module ReciteCSV
       def [](key)
         self._raw_data[key]
       end
+
+      def self.new(*)
+        if self == Base
+          raise ::NotImplementedError,
+                "#{self} is an abstract class and cannot be instantiated."
+        end
+        super
+      end
     end
   end
 end

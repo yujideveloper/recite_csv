@@ -1,5 +1,10 @@
 ## Unreleased
 
+### Changes
+
+* Change `Row::Base` to an abstract class
+
+
 ## 0.1.1 (2017-12-03)
 
 ### Changes
