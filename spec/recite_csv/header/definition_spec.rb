@@ -36,6 +36,14 @@ RSpec.describe ReciteCSV::Header::Definition do
     end
   end
 
+  describe ReciteCSV::Header::Definition::Base do
+    describe ".new" do
+      subject { described_class.new({}) }
+
+      it { expect { subject }.to raise_error(NotImplementedError) }
+    end
+  end
+
   describe ReciteCSV::Header::Definition::Hash do
     describe "#default_csv_options" do
       subject { described_class.new({}).default_csv_options }
