@@ -3,7 +3,7 @@
 require "spec_helper"
 
 RSpec.describe ReciteCSV::Reader::Builder do
-  describe "#new" do
+  describe "#initialize" do
     let(:reader_module) { described_class.new(header) }
 
     context "pass a hash header" do
