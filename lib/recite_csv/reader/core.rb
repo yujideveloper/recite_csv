@@ -11,7 +11,8 @@ module ReciteCSV
 
       def initialize(file, csv_options = {})
         @file = file
-        @csv_options = (csv_options || {}).merge(self.class::DEFAULT_CSV_OPTIONS)
+        @csv_options =
+          (csv_options || {}).merge(self.class::DEFAULT_CSV_OPTIONS)
       end
 
       def each

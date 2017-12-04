@@ -20,7 +20,8 @@ module ReciteCSV
 
         def self.new(*)
           if self == Base
-            raise ::NotImplementedError, "#{self} is an abstract class and cannot be instantiated."
+            raise ::NotImplementedError,
+                  "#{self} is an abstract class and cannot be instantiated."
           end
           super
         end
@@ -65,8 +66,12 @@ module ReciteCSV
       module_function
 
       def dispatch(header_definition)
-        _, definition_class = DEFINITIONS.find { |klass, _| header_definition.is_a? klass }
-        raise ::ArgumentError, "Unexpected header definition type" unless definition_class
+        _, definition_class = DEFINITIONS.find do |klass, _|
+          header_definition.is_a? klass
+        end
+        unless definition_class
+          raise ::ArgumentError, "Unexpected header definition type"
+        end
         definition_class.new(header_definition)
       end
     end
