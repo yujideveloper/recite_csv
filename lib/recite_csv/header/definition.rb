@@ -31,7 +31,7 @@ module ReciteCSV
 
         class ColumnMethodsBuilder < ::Module
           def initialize(raw_definition)
-            raw_definition.each do |method_name, header_name|
+            raw_definition.each_pair do |method_name, header_name|
               define_method method_name do
                 self[header_name]
               end
