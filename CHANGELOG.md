@@ -3,6 +3,7 @@
 ### Changes
 
 * Change `Row::Base` to an abstract class
+* Add file options to `Reader::Core#each`
 
 ### Misc
 
