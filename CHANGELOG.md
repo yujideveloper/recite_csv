@@ -6,7 +6,7 @@
 
 ### Misc
 
-* Change to use `Hash#each_pair` instead of `Hash#each`.
+* Change to use `Hash#each_pair` instead of `Hash#each`
 
 
 ## 0.1.1 (2017-12-03)
