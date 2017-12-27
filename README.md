@@ -111,6 +111,31 @@ Qux.new("./example.csv").each do |row|
 end
 ```
 
+Specify file mode and encoding.
+
+``` ruby
+class Quux
+  include ReciteCSV::Reader::Builder.new(col1: "COL1", col2: "COL2")
+end
+
+Quux.new("./example.csv", file_options: "rb:UTF-8").each do |row|
+  # do something
+end
+```
+
+Convert encoding.
+
+``` ruby
+class Corge
+  include ReciteCSV::Reader::Builder.new(col1: "COL1", col2: "COL2")
+end
+
+Corge.new("./example.csv", file_options: ["rb:Shift_JIS:UTF-8", invalid: :replace, undef: :replace]).each do |row|
+  # do something
+end
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
