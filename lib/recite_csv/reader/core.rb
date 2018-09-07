@@ -39,8 +39,8 @@ module ReciteCSV
         end
       end
 
-      def _foreach(f)
-        ::CSV.new(f, self.csv_options).each do |raw_row|
+      def _foreach(file)
+        ::CSV.new(file, self.csv_options).each do |raw_row|
           yield self.class::Row.new(raw_row)
         end
       end
