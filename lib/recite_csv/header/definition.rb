@@ -50,6 +50,7 @@ module ReciteCSV
           def initialize(raw_definition)
             raw_definition.each.with_index do |name, idx|
               next if name.nil? || name.empty?
+
               define_method name do
                 self[idx]
               end
@@ -72,6 +73,7 @@ module ReciteCSV
         unless definition_class
           raise ::ArgumentError, "Unexpected header definition type"
         end
+
         definition_class.new(header_definition)
       end
     end
