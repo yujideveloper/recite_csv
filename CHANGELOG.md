@@ -3,6 +3,8 @@
 ### Changes
 
 * Drop Ruby 2.2 support
+* Change `Reader::Builder#included` to private method
+
 
 ## 0.1.2 (2018-02-23)
 
