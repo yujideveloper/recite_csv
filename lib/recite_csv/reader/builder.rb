@@ -17,6 +17,8 @@ module ReciteCSV
         end
       end
 
+      private
+
       def included(class_or_module)
         class_or_module.include Core
         class_or_module.const_set(:Row, @row_class)
