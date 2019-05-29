@@ -4,6 +4,10 @@
 
 * Drop Ruby 2.3 support
 
+### Misc
+
+* Introduce RuboCop Performance
+
 
 ## 0.2.0 (2018-09-19)
 
