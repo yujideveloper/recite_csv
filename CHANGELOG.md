@@ -1,5 +1,8 @@
 ## Unreleased
 
+
+## 1.0.0 (2019-05-29)
+
 ### Changes
 
 * Drop Ruby 2.3 support
