@@ -1,6 +1,7 @@
 # ReciteCSV
 
-ReciteCSV helps to build a class for CSV reader.
+ReciteCSV assists to build a class for CSV reader.  
+A reader class built by ReciteCSV iterate each row as PORO(Plain Old Ruby Object).
 
 [![Gem Version](https://badge.fury.io/rb/recite_csv.svg)](https://badge.fury.io/rb/recite_csv)
 [![Build Status](https://travis-ci.org/yujideveloper/recite_csv.svg?branch=master)](https://travis-ci.org/yujideveloper/recite_csv)
