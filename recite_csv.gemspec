@@ -10,8 +10,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yuji Hanamura"]
   spec.email         = ["yuji.developer@gmail.com"]
 
-  spec.summary       = "ReciteCSV helps to build a class for CSV reader."
-  spec.description   = "ReciteCSV helps to build a class for CSV reader."
+  spec.summary       = "ReciteCSV assists to build a class for CSV reader."
+  spec.description   = <<~DESCRIPTION
+    ReciteCSV assists to build a class for CSV reader. A reader class built by ReciteCSV iterate each row as PORO(Plain Old Ruby Object).
+  DESCRIPTION
   spec.homepage      = "https://github.com/yujideveloper/recite_csv"
   spec.license       = "MIT"
 
