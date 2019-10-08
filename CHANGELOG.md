@@ -2,7 +2,7 @@
 
 ### Misc
 
-* Change gem description
+* Update gem metadata
 
 
 ## 1.0.0 (2019-05-29)
