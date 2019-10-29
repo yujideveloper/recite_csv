@@ -26,22 +26,24 @@ module ReciteCSV
       private
 
       def _each(&block)
-        f = if self.file.is_a?(::String)
-              args = Array(self.file_options)
-              if args.last.is_a?(::Hash)
-                args = args.dup
-                kw_args = args.pop
-                ::File.open(self.file, *args, **kw_args)
-              else
-                ::File.open(self.file, *args)
-              end
-            else
-              self.file
-            end
+        f = _open
         begin
           _foreach(f, &block)
         ensure
           f.close if self.file.is_a?(::String)
+        end
+      end
+
+      def _open
+        return self.file unless self.file.is_a?(::String)
+
+        args = Array(self.file_options)
+        if args.last.is_a?(::Hash)
+          args = args.dup
+          kw_args = args.pop
+          ::File.open(self.file, *args, **kw_args)
+        else
+          ::File.open(self.file, *args)
         end
       end
 
