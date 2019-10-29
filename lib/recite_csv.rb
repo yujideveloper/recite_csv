@@ -3,3 +3,4 @@
 require "recite_csv/module"
 require "recite_csv/version"
 require "recite_csv/reader"
+require "recite_csv/writer"
