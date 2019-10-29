@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Changes
+
+* Suppress warnings of keyword arguments in Ruby 2.7
+
 ### Misc
 
 * Update gem metadata
