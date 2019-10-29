@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "recite_csv/header"
-require "recite_csv/row"
+require "recite_csv/reader/row"
 require "recite_csv/reader/core"
 require "recite_csv/reader/dsl"
 

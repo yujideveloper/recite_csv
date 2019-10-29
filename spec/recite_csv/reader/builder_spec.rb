@@ -17,7 +17,7 @@ RSpec.describe ReciteCSV::Reader::Builder do
       describe "@row_class" do
         subject { reader_module.instance_variable_get :@row_class }
 
-        it { is_expected.to be < ReciteCSV::Row::Base }
+        it { is_expected.to be < ReciteCSV::Reader::Row::Base }
         it { is_expected.to be_method_defined :col1 }
         it { is_expected.to be_method_defined :col2 }
         it { is_expected.not_to be_method_defined :col3 }
@@ -29,7 +29,7 @@ RSpec.describe ReciteCSV::Reader::Builder do
             end
           end
 
-          it { is_expected.to be < ReciteCSV::Row::Base }
+          it { is_expected.to be < ReciteCSV::Reader::Row::Base }
           it { is_expected.to be_method_defined :col1 }
           it { is_expected.to be_method_defined :col2 }
           it { is_expected.not_to be_method_defined :col3 }
@@ -55,7 +55,7 @@ RSpec.describe ReciteCSV::Reader::Builder do
       describe "@row_class" do
         subject { reader_module.instance_variable_get :@row_class }
 
-        it { is_expected.to be < ReciteCSV::Row::Base }
+        it { is_expected.to be < ReciteCSV::Reader::Row::Base }
         it { is_expected.to be_method_defined :col1 }
         it { is_expected.to be_method_defined :col2 }
         it { is_expected.to be_method_defined :col3 }
@@ -67,7 +67,7 @@ RSpec.describe ReciteCSV::Reader::Builder do
             end
           end
 
-          it { is_expected.to be < ReciteCSV::Row::Base }
+          it { is_expected.to be < ReciteCSV::Reader::Row::Base }
           it { is_expected.to be_method_defined :col1 }
           it { is_expected.to be_method_defined :col2 }
           it { is_expected.to be_method_defined :col3 }

@@ -3,6 +3,7 @@
 ### Changes
 
 * Suppress warnings of keyword arguments in Ruby 2.7
+* Change namespace from `Row::Base` to `Reader::Row::Base`
 
 ### Misc
 

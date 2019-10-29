@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-RSpec.describe ReciteCSV::Row::Base do
+RSpec.describe ReciteCSV::Reader::Row::Base do
   let(:dummy_class) do
     Class.new(described_class)
   end
