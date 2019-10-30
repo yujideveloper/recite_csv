@@ -51,6 +51,7 @@ module ReciteCSV
         ::CSV.new(file, **self.csv_options).each do |raw_row|
           yield self.class::Row.new(raw_row)
         end
+        self
       end
     end
   end

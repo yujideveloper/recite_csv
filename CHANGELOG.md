@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Breaking changes
+
+* Chagne `Reader::Core#each` to return a receiver itself
+
 ### Changes
 
 * Suppress warnings of keyword arguments in Ruby 2.7
