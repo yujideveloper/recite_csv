@@ -11,20 +11,22 @@ RSpec.describe ReciteCSV::Reader::Core do
       const_set(:DEFAULT_CSV_OPTIONS, headers: :first_row)
     end
   end
+  let(:temp_csv) { Tempfile.open("csv") }
+  let(:reader) do
+    temp_csv.write(csv_string)
+    temp_csv.flush
+    temp_csv.rewind
+    dummy_class.new(temp_csv)
+  end
+  after { temp_csv.close }
 
   describe "#each" do
-    let(:temp_csv) { Tempfile.open("csv") }
-    let(:reader) do
-      csv_string = CSV.generate do |csv|
+    let(:csv_string) do
+      CSV.generate do |csv|
         csv << %w[COL1 COL2]
         csv << %w[V1 V2]
       end
-      temp_csv.write(csv_string)
-      temp_csv.flush
-      temp_csv.rewind
-      dummy_class.new(temp_csv)
     end
-    after { temp_csv.close }
 
     context "call with a block" do
       it "enumerate with row objects" do
@@ -41,6 +43,28 @@ RSpec.describe ReciteCSV::Reader::Core do
       subject { reader.each }
 
       it { is_expected.to be_a Enumerator }
+    end
+  end
+
+  describe "methods of Enumerable" do
+    let(:csv_string) do
+      CSV.generate do |csv|
+        csv << %w[COL1 COL2]
+        csv << %w[V1 V2]
+        csv << %w[V3 V4]
+      end
+    end
+
+    describe "#map" do
+      subject { reader.map { |r| r["COL1"] } }
+
+      it { is_expected.to eq %w[V1 V3] }
+    end
+
+    describe "#count" do
+      subject { reader.count }
+
+      it { is_expected.to eq 2 }
     end
   end
 end
