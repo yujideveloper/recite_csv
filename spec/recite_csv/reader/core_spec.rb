@@ -27,11 +27,12 @@ RSpec.describe ReciteCSV::Reader::Core do
 
     context "call with block" do
       it "enumerate with row object" do
-        reader.each do |row|
+        r = reader.each do |row|
           expect(row).to be_a ReciteCSV::Row::Base
           expect(row["COL1"]).to eq "V1"
           expect(row["COL2"]).to eq "V2"
         end
+        expect(r).to equal reader
       end
     end
 
