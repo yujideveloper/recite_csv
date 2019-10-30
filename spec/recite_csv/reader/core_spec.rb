@@ -21,6 +21,7 @@ RSpec.describe ReciteCSV::Reader::Core do
       end
       temp_csv.write(csv_string)
       temp_csv.flush
+      temp_csv.rewind
       dummy_class.new(temp_csv)
     end
     after { temp_csv.close }
