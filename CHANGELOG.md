@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2.0.0 (2020-01-09)
+
 ### Breaking changes
 
 * Chagne `Reader::Core#each` to return a receiver itself
