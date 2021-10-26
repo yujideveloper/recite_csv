@@ -3,6 +3,7 @@
 ### Misc
 
 * Migrate CI from Travis CI to GitHub Actions
+* CI against for Ruby 3.0
 
 
 ## 2.0.0 (2020-01-09)
