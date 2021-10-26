@@ -1,5 +1,10 @@
 ## Unreleased
 
+### Misc
+
+* Migrate CI from Travis CI to GitHub Actions
+
+
 ## 2.0.0 (2020-01-09)
 
 ### Breaking changes
