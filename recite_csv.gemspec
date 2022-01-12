@@ -23,6 +23,8 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.metadata["source_code_uri"]   = spec.homepage
   spec.metadata["changelog_uri"]     = "https://github.com/yujideveloper/recite_csv/tree/master/CHANGELOG.md"
 
+  spec.metadata["rubygems_mfa_required"] = "true"
+
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`
       .split("\x0")
