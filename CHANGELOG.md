@@ -4,6 +4,7 @@
 
 * Migrate CI from Travis CI to GitHub Actions
 * CI against for Ruby 3.0 and 3.1
+* Require MFA to release gem
 
 
 ## 2.0.0 (2020-01-09)
