@@ -3,6 +3,7 @@
 ### Changes
 
 * Add csv gem to runtime dependencies
+* Drop Ruby 2.x support
 
 ### Misc
 
