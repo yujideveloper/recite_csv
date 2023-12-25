@@ -4,7 +4,7 @@ lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "recite_csv/version"
 
-Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
+Gem::Specification.new do |spec|
   spec.name          = "recite_csv"
   spec.version       = ReciteCSV::VERSION
   spec.authors       = ["Yuji Hanamura"]
@@ -37,11 +37,4 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.required_ruby_version = ">= 3.0"
 
   spec.add_dependency "csv"
-
-  spec.add_development_dependency "bundler", ">= 1.14"
-  spec.add_development_dependency "pry", ">= 0.10.0"
-  spec.add_development_dependency "rake", ">= 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", ">= 0.70.0"
-  spec.add_development_dependency "rubocop-performance", ">= 1.3.0"
 end

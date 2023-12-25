@@ -9,11 +9,13 @@ module ReciteCSV
   module Reader
     class Builder < ::Module
       def initialize(header_definition, &block)
+        super()
+
         definition = Header::Definition.dispatch(header_definition)
         @definition = definition
         @row_class = ::Class.new(Row::Base) do |klass|
           klass.include definition.build_column_methods_module
-          klass.class_exec(&block) if block_given?
+          klass.class_exec(&block) if block
         end
       end
 

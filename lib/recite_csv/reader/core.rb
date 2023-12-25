@@ -16,7 +16,7 @@ module ReciteCSV
       end
 
       def each(&block)
-        if block_given?
+        if block
           _each(&block)
         else
           self.to_enum

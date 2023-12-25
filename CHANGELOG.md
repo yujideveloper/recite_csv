@@ -11,6 +11,7 @@
 * CI against for Ruby 3.0, 3.1, 3.2, and 3.3
 * Require MFA to release gem
 * Change the default branch from master to main
+* Correct RuboCop offenses
 
 
 ## 2.0.0 (2020-01-09)

@@ -3,15 +3,17 @@
 require "spec_helper"
 
 RSpec.describe "Reading file" do
-  class DummyReader
-    include ::ReciteCSV::Reader::Builder.new(col1: "カラム1", col2: "カラム2")
+  let!(:dummy_reader_class) do
+    Class.new do
+      include ReciteCSV::Reader::Builder.new(col1: "カラム1", col2: "カラム2")
+    end
   end
 
   context "pass a file path" do
     context "specify encoding" do
       let(:path) { fixture_path("utf-8.csv") }
       let(:file_options) { "rb:UTF-8" }
-      let(:reader) { DummyReader.new(path, file_options: file_options) }
+      let(:reader) { dummy_reader_class.new(path, file_options: file_options) }
 
       it do
         rows = reader.each.to_a
@@ -24,9 +26,9 @@ RSpec.describe "Reading file" do
     context "convert encoding (Shift_JIS -> UTF-8)" do
       let(:path) { fixture_path("sjis.csv") }
       let(:file_options) do
-        ["rb:Shift_JIS:UTF-8", invalid: :replace, undef: :replace]
+        ["rb:Shift_JIS:UTF-8", { invalid: :replace, undef: :replace }]
       end
-      let(:reader) { DummyReader.new(path, file_options: file_options) }
+      let(:reader) { dummy_reader_class.new(path, file_options: file_options) }
 
       it do
         rows = reader.each.to_a
@@ -42,7 +44,7 @@ RSpec.describe "Reading file" do
       let(:file) do
         File.open(fixture_path("utf-8.csv"), "rb:UTF-8")
       end
-      let(:reader) { DummyReader.new(file) }
+      let(:reader) { dummy_reader_class.new(file) }
 
       it do
         rows = reader.each.to_a
@@ -57,7 +59,7 @@ RSpec.describe "Reading file" do
         File.open(fixture_path("sjis.csv"), "rb:Shift_JIS:UTF-8",
                   undef: :replace, invalid: :replace)
       end
-      let(:reader) { DummyReader.new(file) }
+      let(:reader) { dummy_reader_class.new(file) }
 
       it do
         rows = reader.each.to_a
