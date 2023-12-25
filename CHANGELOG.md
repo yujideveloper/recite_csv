@@ -1,5 +1,8 @@
 ## Unreleased
 
+
+## 2.1.0 (2023-12-25)
+
 ### Changes
 
 * Add csv gem to runtime dependencies
