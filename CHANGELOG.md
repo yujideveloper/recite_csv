@@ -12,6 +12,7 @@
 * Require MFA to release gem
 * Change the default branch from master to main
 * Correct RuboCop offenses
+* Update dev dependencies
 
 
 ## 2.0.0 (2020-01-09)
