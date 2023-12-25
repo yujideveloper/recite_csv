@@ -74,9 +74,7 @@ module ReciteCSV
         _, definition_class = DEFINITIONS.find do |klass, _|
           header_definition.is_a? klass
         end
-        unless definition_class
-          raise ::ArgumentError, "Unexpected header definition type"
-        end
+        raise ::ArgumentError, "Unexpected header definition type" unless definition_class
 
         definition_class.new(header_definition)
       end
