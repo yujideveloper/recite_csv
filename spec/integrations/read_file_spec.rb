@@ -26,7 +26,7 @@ RSpec.describe "Reading file" do
     context "convert encoding (Shift_JIS -> UTF-8)" do
       let(:path) { fixture_path("sjis.csv") }
       let(:file_options) do
-        ["rb:Shift_JIS:UTF-8", invalid: :replace, undef: :replace]
+        ["rb:Shift_JIS:UTF-8", { invalid: :replace, undef: :replace }]
       end
       let(:reader) { dummy_reader_class.new(path, file_options: file_options) }
 
