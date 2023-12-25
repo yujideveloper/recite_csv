@@ -2,5 +2,11 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in recite_csv.gemspec
 gemspec
+
+gem "bundler", ">= 1.14"
+gem "pry", ">= 0.10.0"
+gem "rake", ">= 10.0"
+gem "rspec", "~> 3.0"
+gem "rubocop", ">= 0.70.0"
+gem "rubocop-performance", ">= 1.3.0"
