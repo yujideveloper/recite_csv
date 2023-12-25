@@ -7,7 +7,7 @@
 ### Misc
 
 * Migrate CI from Travis CI to GitHub Actions
-* CI against for Ruby 3.0 and 3.1
+* CI against for Ruby 3.0, 3.1, 3.2, and 3.3
 * Require MFA to release gem
 
 
