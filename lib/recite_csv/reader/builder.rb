@@ -15,7 +15,7 @@ module ReciteCSV
         @definition = definition
         @row_class = ::Class.new(Row::Base) do |klass|
           klass.include definition.build_column_methods_module
-          klass.class_exec(&block) if block_given?
+          klass.class_exec(&block) if block
         end
       end
 
