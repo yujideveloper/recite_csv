@@ -32,6 +32,8 @@ module ReciteCSV
 
         class ColumnMethodsBuilder < ::Module
           def initialize(raw_definition)
+            super()
+
             raw_definition.each_pair do |method_name, header_name|
               define_method method_name do
                 self[header_name]
@@ -48,6 +50,8 @@ module ReciteCSV
       class Array < Base
         class ColumnMethodsBuilder < ::Module
           def initialize(raw_definition)
+            super()
+
             raw_definition.each.with_index do |name, idx|
               next if name.nil? || name.empty?
 
