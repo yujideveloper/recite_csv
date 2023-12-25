@@ -5,7 +5,7 @@ require "spec_helper"
 RSpec.describe "Reading file" do
   let!(:dummy_reader_class) do
     Class.new do
-      include ::ReciteCSV::Reader::Builder.new(col1: "カラム1", col2: "カラム2")
+      include ReciteCSV::Reader::Builder.new(col1: "カラム1", col2: "カラム2")
     end
   end
 
