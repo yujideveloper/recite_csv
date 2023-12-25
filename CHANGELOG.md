@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Changes
+
+* Add csv gem to runtime dependencies
+
 ### Misc
 
 * Migrate CI from Travis CI to GitHub Actions
