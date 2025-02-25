@@ -3,6 +3,6 @@
 
 require "bundler/setup"
 require "recite_csv"
-require "pry"
+require "irb"
 
-Pry.start
+IRB.start
