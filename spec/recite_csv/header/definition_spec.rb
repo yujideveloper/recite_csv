@@ -14,7 +14,7 @@ RSpec.describe ReciteCSV::Header::Definition do
     end
 
     context "pass a subclass object of hash" do
-      let(:object) { Class.new(Hash).new(col1: "COL1", col2: "COL2") }
+      let(:object) { Class.new(Hash).new({ col1: "COL1", col2: "COL2" }) }
       it { is_expected.to be_a ReciteCSV::Header::Definition::Hash }
     end
 
