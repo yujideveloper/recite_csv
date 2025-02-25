@@ -4,6 +4,7 @@
 
 * CI against for Ruby 3.4
 * Use IRB console
+* Bump rubocop and plugin versions
 
 
 ## 2.1.0 (2023-12-25)
