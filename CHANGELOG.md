@@ -3,6 +3,7 @@
 ### Misc
 
 * CI against for Ruby 3.4
+* Use IRB console
 
 
 ## 2.1.0 (2023-12-25)
